@@ -1,4 +1,4 @@
-import FindFacebookId from 'find-facebook-id'
+import FindFacebookId from 'getFBId'
 
 async function findId(name) {
     try {

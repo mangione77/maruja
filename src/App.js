@@ -21,6 +21,7 @@ class App extends Component {
     }, () => {
       findId(this.state.profileUrl)
         .then(response => {
+          console.log(response)
           this.setState({
             profileId:response
           })

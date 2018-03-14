@@ -8,8 +8,6 @@ class TableLayout extends Component {
         super()
         this.state = {
             infoIcon: 'ℹ',
-            profileIcon: '🕵',
-            profileTitle:'Perfil',
             photosIcon: '📷'
         }
     }
@@ -19,8 +17,6 @@ class TableLayout extends Component {
             <Row>
                 <Col lg={4} md={6} sm={12}>
                     <OptionsTable 
-                        icon={this.state.profileIcon} 
-                        title={this.state.profileTitle}
                         photosIcon={this.state.photosIcon}
                         profileId={this.props.profileId}                        
                     />
