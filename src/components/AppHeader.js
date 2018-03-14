@@ -27,11 +27,11 @@ class AppHeader extends Component {
                 <Col lg={12} md={12} sm={12}>
                     <h1 className="App-title">Maruja</h1>
                     <p>Toda la información pública, en un sólo lugar.</p>
-                    <p>👉Link del perfil a checkear👈</p>
+                    <p>👉Usuario del perfil a checkear👈</p>
                 </Col>
                 <Col lg={4} lgOffset={4} md={12} sm={12}>
                     <div className="input-group">
-                        <input type="text" className="form-control" value={this.state.inputText} onChange={this.textHandler} />
+                        <input type="text" className="form-control" value={this.state.inputText} onChange={this.textHandler} placeholder="Ejemplo: facebook.com/zuck"/>
                         <span className="input-group-btn">
                                 <button className="btn btn-default" onClick={this.buttonSubmitHandler} type="button">🔎</button>
                         </span>

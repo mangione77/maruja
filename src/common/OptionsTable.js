@@ -2,22 +2,32 @@ import React, { Component } from 'react'
 
 class OptionsTable extends Component {
     render() {
+        {
+            var iconStyle = {
+                "width":"20"
+            }
+
+            var tdIcon = {
+                "height":"20",
+                "margin-right":"5"
+            }
+        }
         return <div>
-            <table class="table">
+            <table className="table options-table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col" style={iconStyle}>{this.props.icon}</th>
+                <th scope="col">{this.props.title}</th>  
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td style={iconStyle}><span>{this.props.photosIcon}</span></td>
+                {
+                    this.props.profileId 
+                            ? <td><a target="_blank" href={`https://www.facebook.com/search/${this.props.profileId}/photos-by/`}>Fotos</a></td>    
+                            : <td>Fotos</td>            
+                }
             </tr>
             </tbody>
         </table>
