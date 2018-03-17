@@ -9,33 +9,26 @@ class GenericTable extends Component {
         var emptyTRStyle = {
             "borderTop":"0"
         }
-        return <div>
-        <table className="table options-table table-hover">
-        {
-            this.props.Urls !== undefined 
-            ? <thead> 
+        return <table className="table options-table table-hover">
+         <thead> 
             <tr>
-            <th scope="col" style={iconStyle}>{this.props.headerIcon}</th>
-            <th scope="col">{this.props.headerTitle}</th>  
+            <th scope="col" style={iconStyle}>{this.props.categoryIcon}</th>
+            <th scope="col">{this.props.categoryTitle}</th>  
             </tr>
             </thead>
-            : <thead style={emptyTRStyle}><tr><td></td></tr></thead>
-                
-        } 
         <tbody>
-        {
-            this.props.Urls !== undefined 
-            ? this.props.Urls.map(url => {
-                return <tr>
+            {
+                this.props.links 
+                ? this.props.links.map(url => {
+                    return <tr>
                     <td style={iconStyle}><span>{url.linkIcon}</span></td>
                     <td><a target="_blank" href={url.linkUrl}>{url.linkName}</a></td>
                 </tr>
-            })
-            : <tr><td style={emptyTRStyle}></td></tr>
-        }            
+                })
+                :<tr />
+            }
         </tbody>
     </table>
-    </div>
     }
 }
 
