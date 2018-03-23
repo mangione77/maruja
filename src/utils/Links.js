@@ -1,34 +1,16 @@
 const buildUrls = (id) => {
     let links = [
         {
-            "categoryTitle":"Likes",
-            "categoryIcon":"👍",
-            "links": [
-                { "linkName":"Fotos", "linkUrl":`https://www.facebook.com/search/${id}/photos-liked/intersect`, "linkIcon":"📷" },
-                { "linkName":"Vídeos", "linkUrl":`https://www.facebook.com/search/${id}/videos-liked/intersect`, "linkIcon":"📹" },
-                { "linkName":"Posts", "linkUrl":`https://www.facebook.com/search/${id}/stories-liked/intersect`, "linkIcon":"📓" }
-            ]
-        },
-        {
             "categoryTitle":"Perfil",
             "categoryIcon":"🕵",
             "links": [
                 { "linkName":"Fotos", "linkUrl":`https://www.facebook.com/search/${id}/photos-by/`, "linkIcon":"📷" },
                 { "linkName":"Vídeos", "linkUrl":`https://www.facebook.com/search/${id}/videos-by/`, "linkIcon":"📹" },
-                { "linkName":"Grupos", "linkUrl":`https://www.facebook.com/search/${id}/groups`, "linkIcon":"👩‍👦‍👦" },
+                { "linkName":"Grupos", "linkUrl":`https://www.facebook.com/search/${id}/groups`, "linkIcon":"🤖" },
                 { "linkName":"Eventos futuros", "linkUrl":`https://www.facebook.com/search/${id}/events-joined/`, "linkIcon":"📅" },
                 { "linkName":"Eventos pasados", "linkUrl":`https://www.facebook.com/search/${id}/events-joined/in-past/date/events/intersect/`, "linkIcon":"📅" },
                 { "linkName":"Juegos", "linkUrl":`https://www.facebook.com/search/${id}/apps-used/game/apps/intersect`, "linkIcon":"🎮" },
                 { "linkName":"Apps", "linkUrl":`https://www.facebook.com/search/${id}}/apps-used/`, "linkIcon":"📱" }
-            ]
-        },
-        {
-            "categoryTitle":"Etiquetas",
-            "categoryIcon":"🔖",
-            "links": [
-                { "linkName":"Fotos", "linkUrl":`https://www.facebook.com/search/${id}/photos-of/intersect/`, "linkIcon":"📷" },
-                { "linkName":"Vídeos", "linkUrl":`https://www.facebook.com/search/${id}/videos-of/intersect/`, "linkIcon":"📹" },
-                { "linkName":"Posts", "linkUrl":`https://www.facebook.com/search/${id}/stories-tagged/intersect/`, "linkIcon":"📓" }
             ]
         },
         {
@@ -67,6 +49,24 @@ const buildUrls = (id) => {
                 { "linkName":"Residentes en la misma ciudad", "linkUrl":`https://www.facebook.com/search/${id}/current-cities/residents-near/present/intersect`, "linkIcon":"🌆" },
             ]
         },
+        {
+            "categoryTitle":"Likes",
+            "categoryIcon":"👍",
+            "links": [
+                { "linkName":"Fotos", "linkUrl":`https://www.facebook.com/search/${id}/photos-liked/intersect`, "linkIcon":"📷" },
+                { "linkName":"Vídeos", "linkUrl":`https://www.facebook.com/search/${id}/videos-liked/intersect`, "linkIcon":"📹" },
+                { "linkName":"Posts", "linkUrl":`https://www.facebook.com/search/${id}/stories-liked/intersect`, "linkIcon":"📓" }
+            ]
+        },
+        {
+            "categoryTitle":"Etiquetas",
+            "categoryIcon":"🔖",
+            "links": [
+                { "linkName":"Fotos", "linkUrl":`https://www.facebook.com/search/${id}/photos-of/intersect/`, "linkIcon":"📷" },
+                { "linkName":"Vídeos", "linkUrl":`https://www.facebook.com/search/${id}/videos-of/intersect/`, "linkIcon":"📹" },
+                { "linkName":"Posts", "linkUrl":`https://www.facebook.com/search/${id}/stories-tagged/intersect/`, "linkIcon":"📓" }
+            ]
+        }
     ]
 
     return links

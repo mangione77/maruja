@@ -1,14 +1,15 @@
-import FindFacebookId from 'getFBId'
+import fbCall from './getFBId'
 
-async function findId(name) {
-    try {
-        let id = await FindFacebookId(name)
-        return id
-    }
-    catch (err) {
-        throw err
-    }
-
+function findId(name) {
+    return new Promise((resolve,reject) => {
+        fbCall(name)
+            .then(response => {
+                resolve(response)
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
 }
 
 export default findId

@@ -14,24 +14,43 @@ class TableLayout extends Component {
     render() {
         if (this.props.profileId) {
             var links = buildUrls(this.props.profileId)
+            var firstRow = links.slice(0, 3)
+            var secondRow = links.slice(3, 8)
         }
-        return <Grid fluid>
-            <Row>
-                {
-                    this.props.profileId
-                        ? links.map(link => {
-                            return <Col lg={4} md={6} sm={12}>
+        return <div className="tableLayout-wrapper"> 
+        <Grid fluid>
+        <Row>
+            {
+                this.props.profileId
+                    ? firstRow.map(link => {
+                        return <Col lg={4} md={6} sm={12}>
                                 <GenericTable
                                     categoryIcon={link.categoryIcon}
                                     categoryTitle={link.categoryTitle}
                                     links={link.links}
                                 />
                             </Col>
-                        })
-                        : <div />
-                }
-                </Row>
-            </Grid >
+                    })
+                    : <div />
+            }
+        </Row> 
+        <Row>       
+            {
+                this.props.profileId
+                    ? secondRow.map(link => {
+                        return <Col lg={4} md={6} sm={12}>
+                                <GenericTable
+                                    categoryIcon={link.categoryIcon}
+                                    categoryTitle={link.categoryTitle}
+                                    links={link.links}
+                                />
+                            </Col>
+                    })
+                    : <div />
+            }
+        </Row>    
+        </Grid >
+        </div>
     }
 }
 

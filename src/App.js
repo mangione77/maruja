@@ -28,7 +28,7 @@ class App extends Component {
         })
         .catch(err => {
           this.setState({
-            errorGetId: 404
+            errorGetId: err
           })
         })
     })

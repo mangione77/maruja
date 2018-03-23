@@ -3,27 +3,38 @@
   height: 80px;
 }
 
+
 .App-header {
-  background-color: #5195D5;
-  height: 150px;
-  padding: 20px;
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: white;
   height:30%;
   text-align:center;
 }
 
-.App-title {
-  font-size: 6em;
+.App-title {   
+  font-family: 'Comfortaa', cursive;
+  font-size:6em;
+}
+
+.app-header-description {
+  font-size:1.3em;
 }
 
 .App-intro {
   font-size: large;
+  margin-top:20px
 }
 
 .inputHandler {
   max-width: 20%;
   border-style:none;
   background-color:transparent;
+  text-align:center;
 }
 
 .options-table {
@@ -32,6 +43,54 @@
 
 .input-button {
   float:left;
+}
+
+.popover {
+  font-size:10px;
+  color:#2e3b51;
+}
+
+.popover-title {
+  background: repeating-linear-gradient(
+  45deg,
+  #363795,
+  #363795 10px,
+  #005C97 10px,
+  #005C97 20px
+);
+color:white
+}
+
+.tableLayout-wrapper {
+  align-content: center;
+  margin-left:3em;
+  margin-right:3em;
+}
+
+.header-input {
+  text-align:center;
+  border-style:none;
+}
+
+.link-category-title {
+  font-size:1.5em
+}
+
+.link-list-item {
+  text-align: left;
+  vertical-align: top;
+}
+
+.link-list-link {
+  margin-top:2000px;
+}
+
+.links-table-header {
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+  color:white
 }
 
 .new-url {
