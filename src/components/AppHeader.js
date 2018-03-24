@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class AppHeader extends Component {
     constructor() {
@@ -25,7 +26,7 @@ class AppHeader extends Component {
         <Grid>
             <Row>
                 <Col lg={12} md={12} sm={12}>
-                    <h1 className="App-title">Maruja</h1>
+                    <Link className="header-link" to="/"><h1 className="App-title">Maruja</h1></Link>
                 </Col>
                 <Col lg={4} lgOffset={4} md={12} sm={12}>
                     <div className="input-group">

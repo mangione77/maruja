@@ -1,3 +1,4 @@
+import uuid from 'uuid'
 import React, { Component } from 'react'
 
 class GenericTable extends Component {
@@ -7,7 +8,7 @@ class GenericTable extends Component {
             "paddingBottom":"0",
             "paddingLeft":"1",
             "paddingRight":"0",
-            "font-size":"1.3em"
+            "fontSize":"1.3em"
         }
 
         var iconStyle = {
@@ -16,8 +17,8 @@ class GenericTable extends Component {
             "paddingLeft":"1",
             "paddingRight":"0"
         }
-        return <table className="table options-table table-hover">
-         <thead> 
+        return <table className="table options-table table-hover" key={uuid()}>
+         <thead key={uuid()}>          
             <tr className="links-table-header">
             <th scope="col"><span style={headerIconStyle}>{this.props.categoryIcon}</span></th>
             <th scope="col" className="link-category-title">{this.props.categoryTitle}</th>  

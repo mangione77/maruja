@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import './App.css'
-import AppHeader from './components/AppHeader'
-import NewLoadedUrl from './common/NewLoadedUrl'
-import TableLayout from './components/TableLayout'
+import Main from './pages/Main'
+import Footer from './components/Footer'
+import { BrowserRouter, Route } from 'react-router-dom'
 import findId from './utils/findFacebookId'
+import BulkUploader from './pages/BulkUploader' 
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      profileUrl:'',
+      profileUrl: '',
       profileId: '',
       errorGetId: ''
     }
@@ -17,13 +18,12 @@ class App extends Component {
 
   onProfileUrlChange = (fbUrl) => {
     this.setState({
-      profileUrl:fbUrl
+      profileUrl: fbUrl
     }, () => {
       findId(this.state.profileUrl)
         .then(response => {
-          console.log(response)
           this.setState({
-            profileId:response
+            profileId: response
           })
         })
         .catch(err => {
@@ -32,15 +32,26 @@ class App extends Component {
           })
         })
     })
-  }   
+  }
 
   render() {
     return (
-      <div className="App">
-        <AppHeader onProfileUrlChange={this.onProfileUrlChange} />
-        <NewLoadedUrl profileURL={this.state.profileUrl} profileId={this.state.profileId} errorGetId={this.state.errorGetId} />
-        <TableLayout profileId={this.state.profileId} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path="/" component={(props) =>
+            <Main {...props}
+              onProfileUrlChange={this.onProfileUrlChange}
+              profileURL={this.state.profileUrl}
+              profileId={this.state.profileId}
+              errorGetId={this.state.errorGetId}
+              profileId={this.state.profileId}
+            />
+          }
+          />
+          <Route path="/bulk-ids" component={BulkUploader} />
+          <Route path="/" component={Footer} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

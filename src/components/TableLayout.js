@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import GenericTable from '../common/GenericTable'
 import { Grid, Row, Col } from 'react-bootstrap'
+import uuid from 'uuid/v4'
 import buildUrls from '../utils/Links'
+import Footer from './Footer'
 
 class TableLayout extends Component {
     constructor() {
@@ -23,11 +25,12 @@ class TableLayout extends Component {
             {
                 this.props.profileId
                     ? firstRow.map(link => {
-                        return <Col lg={4} md={6} sm={12}>
+                        return <Col lg={4} md={6} sm={12} key={uuid()}>
                                 <GenericTable
                                     categoryIcon={link.categoryIcon}
                                     categoryTitle={link.categoryTitle}
                                     links={link.links}
+                                    key={uuid()}
                                 />
                             </Col>
                     })
@@ -38,17 +41,18 @@ class TableLayout extends Component {
             {
                 this.props.profileId
                     ? secondRow.map(link => {
-                        return <Col lg={4} md={6} sm={12}>
+                        return <Col lg={4} md={6} sm={12} key={uuid()}>
                                 <GenericTable
                                     categoryIcon={link.categoryIcon}
                                     categoryTitle={link.categoryTitle}
                                     links={link.links}
+                                    key={uuid()} 
                                 />
                             </Col>
                     })
                     : <div />
             }
-        </Row>    
+        </Row>  
         </Grid >
         </div>
     }

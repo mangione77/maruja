@@ -5,7 +5,7 @@ function fbCall(_username) {
         let requestObj = { "username": _username }
         axios.post('https://secret-stream-16692.herokuapp.com/incoming/', requestObj)
             .then(response => {
-                resolve(response.data.id)
+                resolve(response.data.result.id)
             })
             .catch(err => {
                 reject(err)
