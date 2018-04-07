@@ -34,6 +34,14 @@ class App extends Component {
     })
   }
 
+  onResetData = () => {
+    this.setState({
+      profileUrl:'',
+      profileId:'',
+      errorGetId:''
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -41,6 +49,7 @@ class App extends Component {
           <Route exact path="/" component={(props) =>
             <Main {...props}
               onProfileUrlChange={this.onProfileUrlChange}
+              onResetData={this.onResetData}
               profileURL={this.state.profileUrl}
               profileId={this.state.profileId}
               errorGetId={this.state.errorGetId}
@@ -49,7 +58,6 @@ class App extends Component {
           }
           />
           <Route path="/bulk-ids" component={BulkUploader} />
-          <Route path="/" component={Footer} />
         </div>
       </BrowserRouter>
     );

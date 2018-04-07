@@ -3,7 +3,7 @@ import axios from 'axios'
 function fbCallInBulk(_usernames) {
     return new Promise((resolve, reject) => {
         let requestObj = { "usernames": _usernames }
-        axios.post('http://localhost:8080/bulkIncoming/', requestObj)
+        axios.post('https://secret-stream-16692.herokuapp.com/bulkIncoming/', requestObj)
             .then(response => {
                 resolve(response.data)
             })
